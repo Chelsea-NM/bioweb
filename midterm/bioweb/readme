@@ -1,0 +1,19 @@
+#launch app
+python manage.py load_csv dataset/assignment_data_sequences.csv dataset/pfam_descriptions.csv dataset/assignment_data_set.csv
+
+python manage.py runserver
+
+#login
+
+username: admin
+password: bioweb
+
+POST PROTEIN
+{
+    "proteinID":  "This field is required.",
+    "sequence": "This field is required."
+}
+
+GET PROTEIN
+
+http://127.0.0.1:8000/api/protein/A0A022RUE2

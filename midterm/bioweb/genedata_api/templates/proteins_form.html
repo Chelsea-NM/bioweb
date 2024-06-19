@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proteins List</title>
+  </head>
+  <body>
+    <h1>Proteins List</h1>
+
+    <h2>Add Protein</h2>
+    <form method="post" action="{% url 'proteins-api' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Proteins</h2>
+    <ul>
+      {% for protein in proteinslist %}
+      <li>{{ protein.proteinID }} - {{ protein.sequence }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
